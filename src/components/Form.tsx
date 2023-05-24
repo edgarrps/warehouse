@@ -1,6 +1,11 @@
+import { FormEvent } from 'react'
+
 export default function Form() {
   return (
-    <form className="flex justify-center items-center p-4 h-20 bg-stone-600 font-mono font-bold text-white">
+    <form
+      onSubmit={(e: FormEvent<HTMLFormElement>) => e.preventDefault()}
+      className="flex justify-center items-center p-4 h-20 bg-stone-600 font-mono font-bold text-white"
+    >
       <div className="flex space-x-8">
         <div className="space-x-2">
           <label>Item:</label>
