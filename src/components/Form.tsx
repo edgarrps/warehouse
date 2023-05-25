@@ -1,6 +1,15 @@
-import { FormEvent } from 'react'
+import { FormEvent, useState } from 'react'
+
+interface ButtonProps {
+  addItem: string
+  setAddItem: string
+}
 
 export default function Form() {
+  const [addItem, setAddItem] = useState<ButtonProps>('')
+
+  setAddItem() = console.log('teste')
+
   return (
     <form
       onSubmit={(e: FormEvent<HTMLFormElement>) => e.preventDefault()}
@@ -21,7 +30,10 @@ export default function Form() {
           />
         </div>
 
-        <button className="pl-2 pr-2 rounded-md shadow-md bg-stone-700 hover:bg-stone-500 duration-200">
+        <button
+          onClick={addItem}
+          className="pl-2 pr-2 rounded-md shadow-md bg-stone-700 hover:bg-stone-500 duration-200"
+        >
           Adicionar
         </button>
       </div>
