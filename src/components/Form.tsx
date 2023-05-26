@@ -2,13 +2,13 @@ import { FormEvent, useState } from 'react'
 
 interface ButtonProps {
   addItem: string
-  setAddItem: string
+  setAddItem: (value: string) => void
 }
 
 export default function Form() {
-  const [addItem, setAddItem] = useState<ButtonProps>('')
+  const [addItem, setAddItem] = useState<ButtonProps | any>('')
 
-  setAddItem() = console.log('teste')
+  setAddItem(console.log('teste'))
 
   return (
     <form
