@@ -1,14 +1,21 @@
-import { FormEvent, useState } from 'react'
+import { FormEvent, useEffect, useState } from 'react'
 
-interface ButtonProps {
-  addItem: string
-  setAddItem: (value: string) => void
-}
+// interface ButtonProps {
+//  addItem: undefined
+//  setAddItem: (value: string) => void
+// }
 
 export default function Form() {
-  const [addItem, setAddItem] = useState<ButtonProps | any>('')
+  const [addItem, setAddItem] = useState<any | any>('')
 
-  setAddItem(console.log('teste'))
+  useEffect(() => {
+    console.log(addItem)
+  }, [addItem])
+
+  const handleClick = (e: any) => {
+    setAddItem(e.target.value)
+    console.log('teste')
+  }
 
   return (
     <form
@@ -31,7 +38,8 @@ export default function Form() {
         </div>
 
         <button
-          onClick={addItem}
+          value={addItem}
+          onClick={handleClick}
           className="pl-2 pr-2 rounded-md shadow-md bg-stone-700 hover:bg-stone-500 duration-200"
         >
           Adicionar
