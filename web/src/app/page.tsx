@@ -1,3 +1,6 @@
+"use client"
+
+import { Table } from '@nextui-org/react'
 export default function Home() {
   return (<main className='h-screen bg-blue-200'>
     <div className='h-[120px] bg-blue-100 font-mono text-center'>
@@ -6,6 +9,43 @@ export default function Home() {
         <input className='pl-2 rounded-md bg-stone-100 border-4 border-blue-200 w-96' />
         <button className='w-8 rounded-md bg-blue-400 text-stone-200'>+</button>
       </div>
+    </div>
+    <div className='grid place-items-center'>
+    <Table
+      aria-label="Table test"
+      css={{
+        height: "auto",
+        minWidth: "1000px",
+      }}
+    >
+      <Table.Header>
+        <Table.Column>ITEM</Table.Column>
+        <Table.Column>QUANTITY</Table.Column>
+        <Table.Column>STATUS</Table.Column>
+      </Table.Header>
+      <Table.Body>
+        <Table.Row key="1">
+          <Table.Cell>MOUSE</Table.Cell>
+          <Table.Cell>2</Table.Cell>
+          <Table.Cell>OK</Table.Cell>
+        </Table.Row>
+        <Table.Row key="2">
+          <Table.Cell>AXE</Table.Cell>
+          <Table.Cell>1</Table.Cell>
+          <Table.Cell>DAMAGED</Table.Cell>
+        </Table.Row>
+        <Table.Row key="3">
+          <Table.Cell>CAP</Table.Cell>
+          <Table.Cell>1</Table.Cell>
+          <Table.Cell>OK</Table.Cell>
+        </Table.Row>
+        <Table.Row key="4">
+          <Table.Cell>SUNGLASSES</Table.Cell>
+          <Table.Cell>2</Table.Cell>
+          <Table.Cell>OK</Table.Cell>
+        </Table.Row>
+      </Table.Body>
+    </Table>
     </div>
   </main>
   )
