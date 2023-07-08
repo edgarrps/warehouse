@@ -14,7 +14,8 @@ export default function Home() {
           <label htmlFor='amount'>Amount</label>
           <input id='amount' className='pl-1 rounded-md bg-stone-100 border-4 border-blue-200 w-12' />
         </div>
-        <button className='w-8 h-8 rounded-md bg-blue-400 text-stone-200'>+</button>
+        <div><p className='opacity-0 cursor-default'>U+200B</p>
+        <button className='w-8 h-8 rounded-md bg-blue-400 text-stone-200'>+</button></div>
       </div>
     </div>
     <div className='grid place-items-center'>
