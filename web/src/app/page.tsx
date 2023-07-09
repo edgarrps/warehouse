@@ -12,13 +12,13 @@ export default function Home() {
         </div>
         <div className='grid grid-cols-1'>
           <label htmlFor='amount'>Amount</label>
-          <input id='amount' className='pl-1 rounded-md bg-stone-100 border-4 border-blue-200 w-12' />
+          <input id='amount' type='number' min={1} className='pl-1 rounded-md bg-stone-100 border-4 border-blue-200 w-12' />
         </div>
         <div><p className='opacity-0 cursor-default'>U+200B</p>
         <button className='w-8 h-8 rounded-md bg-blue-400 text-stone-200'>+</button></div>
       </div>
     </div>
-    <div className='grid place-items-center'>
+    <div className='grid place-items-center pt-10'>
       <Table
         aria-label="Table test"
         css={{
