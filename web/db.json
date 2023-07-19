@@ -1,0 +1,9 @@
+{
+  "warehouse": [
+    {
+      "id": 1,
+      "name": "cadeira",
+      "amount": "2"
+    }
+  ]
+}
