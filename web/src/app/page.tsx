@@ -7,7 +7,7 @@ interface warehouse {
   status: string
 }
 
-import Header from "@/components/header"
+import Header from "@/components/Header"
 import { useEffect, useState } from "react"
 
 export default function Home() {
@@ -34,7 +34,7 @@ export default function Home() {
           <tr className="text-xl bg-stone-100 rounded-2xl">
             <th>ID</th>
             <th>ITEM</th>
-            <th>QUANTITY</th>
+            <th>AMOUNT</th>
             <th>STATUS</th>
             <th>ACTIONS</th>
           </tr>
@@ -46,7 +46,7 @@ export default function Home() {
               <td>{item.name}</td>
               <td>{item.amount}</td>
               <td className={item.status == "good" ? "font-bold text-green-400 drop-shadow-md" : item.status == "poor" ? "text-red-600 font-bold drop-shadow-md" : "font-bold drop-shadow-lg"}>{item.status}</td>
-              <td>&#128465;</td>
+              <td>&#128465;</td> 
             </tr>
           ))}
         </tbody>
