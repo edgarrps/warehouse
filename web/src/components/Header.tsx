@@ -1,6 +1,16 @@
 export default function Header () {
 
-    
+    function addItem(item:any) {
+
+      fetch("http://localhost:5000/warehouse", {
+        method:"POST",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify(item)
+      }).then((resp) => resp.json()).then((data) =>{console.log(data)}).catch(err => console.log(err))
+
+    }
 
     return (
         <div className='h-[120px] bg-blue-100 font-mono text-center'>
