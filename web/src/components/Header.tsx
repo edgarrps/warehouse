@@ -1,6 +1,9 @@
+import { useState } from "react"
 export default function Header() {
 
   function addItem(item: any) {
+
+    const [warehouse, setWarehouse] = useState([])
 
     fetch("http://localhost:5000/warehouse", {
       method: "POST",
