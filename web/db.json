@@ -6,18 +6,6 @@
         "amount": 2,
         "status": "regular"
       
-      },
-      {
-        "id": 2,
-        "name": "banana",
-        "amount": 12,
-        "status": "good"
-      },
-      {
-        "id": 3,
-        "name": "pencil",
-        "amount": 1,
-        "status": "poor"
       }
   ]
 }
