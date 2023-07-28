@@ -1,7 +1,7 @@
 import { useState } from "react"
 export default function Header() {
 
-  function addItem(item: any) {
+  function addItem(items: any) {
 
     const [warehouse, setWarehouse] = useState([])
 
@@ -10,19 +10,25 @@ export default function Header() {
       headers: {
         "Content-type": "application/json",
       },
-      body: JSON.stringify(item)
+      body: JSON.stringify(items)
     }).then((resp) => resp.json())
       .then((data) => {
         console.log(data)
         //redirect
       })
       .catch(err => console.log(err))
+
+      function handleChange(e:any) {
+        setWarehouse({...items, [e.target.name]: e.target.value})
+      }
+    
   }
+
 
   return (
     <div className='h-[120px] bg-blue-100 font-mono text-center'>
       <p className='pt-4 pb-2 text-blue-400'>WAREHOUSE</p>
-      <div className='flex justify-center space-x-4'>
+      <form onSubmit={(e) => e.preventDefault()} className='flex justify-center space-x-4'>
         <div className='grid grid-cols-1'>
           <label htmlFor='item'>Item</label>
           <input id='item' className='pl-2 rounded-md bg-stone-100 border-4 border-blue-200 w-96' />
@@ -41,7 +47,7 @@ export default function Header() {
         </div>
         <div><p className='opacity-0 cursor-default'>U+200B</p>
           <button className='w-8 h-8 rounded-md bg-blue-400 text-stone-200'>+</button></div>
-      </div>
+      </form>
     </div>
   )
 }
